@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Waco</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-pink, #faf4f5);
+      color: var(--dark, #252525);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .thankyou-container {
+      background: #fff;
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      text-align: center;
+      max-width: 500px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .thankyou-container h1 {
+      color: var(--primary, #443627);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .thankyou-container p {
+      color: #555;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .btn-primary {
+      background: var(--secondary, #D98324);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: #b86419;
+    }
+
+    .emoji {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="thankyou-container">
+    <div class="emoji">🧇☕</div>
+    <h1>Thank You for Your Order!</h1>
+    <p>Your order has been successfully placed.  
+    You’ll receive an update once it’s being processed.  
+    Enjoy your waffles & coffee!</p>
+
+    <a href="index.html" class="btn-primary">Back to Home</a>
+  </div>
+
+</body>
+</html>

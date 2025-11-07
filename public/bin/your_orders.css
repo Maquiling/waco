@@ -1,0 +1,133 @@
+/* ===== WACO YOUR ORDERS PAGE ===== */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #faf4f5;
+  margin: 0;
+  color: #252525;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #443627;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header .logo img {
+  height: 40px;
+}
+
+.header .nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.header .nav a:hover,
+.header .nav a.active {
+  color: #D98324;
+}
+
+/* MAIN */
+.orders-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.orders-container h1 {
+  text-align: center;
+  color: #443627;
+  margin-bottom: 1.5rem;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ORDER ITEM */
+.order-item {
+  background: #faf4f5;
+  border: 1px solid #ccc;
+  border-left: 6px solid #D98324;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-header h4 {
+  margin: 0;
+  color: #443627;
+}
+
+.order-header button {
+  background: none;
+  border: none;
+  color: #D98324;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.order-header button:hover {
+  color: #b55d0f;
+}
+
+.order-info p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #252525;
+}
+
+/* ORDER DETAILS (hidden by default) */
+.order-details {
+  margin-top: 0.75rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: none;
+}
+
+.order-details ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+.order-details li {
+  font-size: 0.9rem;
+  color: #443627;
+}
+
+/* SHOW DETAILS */
+.order-details.show {
+  display: block;
+}

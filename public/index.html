@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waco | Waffles & Coffee</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  
+<header class="header">
+  <div class="logo-container">
+    <img src="assets/wacologo.png" alt="Waco Logo" class="logo-img">
+    <h1 class="logo-text">Waco</h1>
+  </div>
+   <div id="headerUser"></div>
+
+  <nav class="nav">
+    
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <button id="myOrdersBtn" class="orders-btn">My Orders</button>
+    <button id="cartBtn" class="btn-secondary">🛒 Cart</button>
+    <button id="loginBtn" class="btn-primary">Login</button>
+    <button id="logoutBtn" class="btn-secondary hidden">Logout</button>
+  </nav>
+</header>
+
+
+  
+  <section class="hero">
+    <div class="hero-content fade-in">
+      <h2>Freshly Brewed Coffee & Crispy Waffles</h2>
+      <p>Start your day with the perfect blend of comfort and flavor at <strong>Waco</strong>.</p>
+      <a href="#menu" class="btn-primary">Explore Menu</a>
+    </div>
+  </section>
+  
+  <!-- 🧇 MENU SECTION -->
+  <section id="menu" class="main-content fade-up">
+    <h2>Our Menu</h2>
+    <p class="section-desc">
+      Handcrafted waffles and freshly brewed coffee — made with love and local beans.
+    </p>
+
+
+    <!-- 🔸 Product Grid -->
+    <div id="products" class="product-grid"></div>
+  </section>
+
+  <!-- 🧾 ABOUT US -->
+  <section id="about" class="about fade-up">
+    <h2>About Us</h2>
+    <p>
+      At <strong>Waco</strong>, we believe every bite and sip should bring warmth.
+      Founded in 2023, our cozy café serves artisanal waffles and specialty coffee
+      sourced from local farms. Whether you’re here to relax, work, or meet friends,
+      we make sure your experience is unforgettable.
+    </p>
+    <img src="assets/about-cafe.jpg" alt="About Waco" />
+  </section>
+
+  <!-- 📍 CONTACT US -->
+  <section id="contact" class="contact fade-up">
+    <h2>Contact Us</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p><strong>Address:</strong> Ipil St., San Jose Rodriguez, Rizal</p>
+        <p><strong>Email:</strong> hello@waco.com</p>
+        <p><strong>Hours:</strong> Mon–Sun: 7AM – 9PM</p>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d811.1959921573008!2d121.13471793841876!3d14.72840569323528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1759780245875!5m2!1sen!2sph"
+        width="100%" height="400" style="border:0; border-radius:15px;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- 🧡 FOOTER -->
+  <footer class="footer fade-in">
+    <p>© 2025 Waco | Waffles & Coffee. All rights reserved.</p>
+  </footer>
+
+  <!-- 🛒 CART PANEL -->
+  <div id="cart-container" class="cart">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart" class="close-btn" aria-label="Close Cart">✖</button>
+    </div>
+    <ul id="cart-items"></ul>
+    <p id="cart-total">Total: ₱0.00</p>
+    <div class="cart-actions">
+      <button id="clearCart" class="btn-secondary">Clear Cart</button>
+      <button id="checkoutBtn" class="btn-primary">Checkout</button>
+    </div>
+  </div>
+
+<!-- 🔐 LOGIN/SIGNUP MODAL -->
+<div id="authModal" class="modal">
+  <div class="modal-content auth-box pop">
+    <button id="closeAuthModal" class="close-btn">×</button>
+    <h2 class="auth-title">Welcome to Waco</h2>
+    <p class="auth-subtitle">Log in to continue</p>
+
+    <div class="social-login">
+      <button type="button" id="googleLoginBtn" class="social-btn google-btn">
+        <img src="assets/google-icon.png" alt="Google" /> 
+        Continue with Google
+      </button>
+
+      <button type="button" id="facebookLoginBtn" class="social-btn facebook-btn">
+        <img src="assets/fb-logo.png" alt="Facebook" /> 
+        Continue with Facebook
+      </button>
+    </div>
+
+    <p class="auth-note">
+      By continuing, you agree to Waco’s <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+    </p>
+  </div>
+</div>
+
+
+<!-- 🧋 PRODUCT CUSTOMIZATION MODAL -->
+<div id="customizeModal" class="customize-modal">
+  <div class="customize-modal-content">
+    <span class="customize-close-icon">&times;</span>
+    <img id="modal-image" class="customize-modal-image" src="assets/placeholder.jpg" alt="Product">
+    <h2 class="customize-modal-title">Customize Drink</h2>
+
+    <div class="customize-options"></div>
+    <p class="customize-price">Price: <strong>₱0.00</strong></p>
+
+    <button class="customize-add-btn">Add to Cart</button>
+    <button class="customize-close-btn">Cancel</button>
+  </div>
+</div>
+
+
+
+<!-- ===== MY ORDERS MODAL ===== -->
+<div id="myOrdersModal" class="modal">
+  <div class="modal-content orders-box">
+    <button class="close-btn">&times;</button>
+    <h2>My Orders</h2>
+    <div id="ordersContainer" class="orders-container">
+      <!-- Orders will load here -->
+    </div>
+  </div>
+</div>
+
+
+  <script src="main.js"></script>
+ 
+</body>
+</html>
+ 

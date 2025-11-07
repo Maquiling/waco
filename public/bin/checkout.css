@@ -1,0 +1,210 @@
+/* ========== WACO CHECKOUT STYLES ========== */
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Theme Colors */
+:root {
+  --white: #fff;
+  --dark: #252525;
+  --primary: #443627;
+  --secondary: #d98324;
+  --light-pink: #faf4f5;
+  --gray: #ccc;
+}
+
+/* Body */
+body {
+  background: linear-gradient(180deg, #faf4f5 0%, #fff 100%);
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--secondary);
+}
+
+/* Checkout Section */
+.checkout-section {
+  flex: 1;
+  width: 90%;
+  max-width: 720px;
+  background: var(--white);
+  margin: 2rem auto;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease;
+}
+
+/* Section Header */
+.checkout-section h2 {
+  text-align: center;
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--secondary);
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+/* Form Layout */
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Labels */
+.checkout-form label {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+/* Inputs & Selects */
+.checkout-form input,
+.checkout-form select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--gray);
+  background: var(--light-pink);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.checkout-form input:focus,
+.checkout-form select:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(217, 131, 36, 0.15);
+  background: var(--white);
+}
+
+/* GCash Reference (Conditional Display) */
+#gcashRefContainer.hidden {
+  display: none;
+}
+
+/* Map Container */
+.map-container {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--gray);
+  margin-top: 0.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Summary Box */
+.total-box {
+  background: #fdf7f3;
+  border: 1px solid var(--secondary);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Primary Button */
+.btn-primary {
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  background: #b86a1b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(217, 131, 36, 0.3);
+}
+
+/* Footer */
+.footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+  letter-spacing: 0.3px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .checkout-section {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav {
+    margin-top: 0.5rem;
+  }
+
+  .map-container {
+    height: 200px;
+  }
+}

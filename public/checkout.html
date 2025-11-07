@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waco | Checkout</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Basic styling to match main page */
+    body { font-family: Arial, sans-serif; background: #faf4f5; color: #252525; margin: 0; padding: 0; }
+    .container { max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    h2 { text-align: center; margin-bottom: 1rem; }
+    .checkout-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #ccc; }
+    .form-group { margin: 1rem 0; }
+    label { display: block; margin-bottom: 0.25rem; font-weight: bold; }
+    input, select { width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #ccc; }
+    #gcashRefField { display: none; }
+    button { background: #443627; color: #fff; border: none; padding: 0.75rem 1rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    button:hover { background: #D98324; }
+    #checkout-total { text-align: right; font-weight: bold; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Checkout</h2>
+
+    <div id="checkout-items"></div>
+    <div id="checkout-total"></div>
+
+    <form id="checkoutForm">
+      <div class="form-group">
+        <label for="diningOption">Dining Option</label>
+        <select id="diningOption" required>
+          <option value="">Select option</option>
+          <option value="Dine-in">Dine-in</option>
+          <option value="Pick-up">Pick-up</option>
+          <option value="Delivery">Delivery</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method</label>
+        <select id="paymentMethod" required>
+          <option value="">Select method</option>
+          <option value="Cash">Cash</option>
+          <option value="Gcash">Gcash</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="gcashRefField">
+        <label for="gcashRef">Gcash Reference</label>
+        <input type="text" id="gcashRef" placeholder="Enter Gcash reference" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Your email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" placeholder="Your phone number" required />
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" id="address" placeholder="Your address" required />
+      </div>
+
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

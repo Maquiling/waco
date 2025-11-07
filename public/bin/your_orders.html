@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Orders - Waco</title>
+  <style>
+    body {
+      background: #faf4f5;
+      font-family: "Poppins", sans-serif;
+      color: #252525;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #443627;
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+    }
+
+    .orders-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem 2rem;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .order {
+      border-bottom: 1px solid #ccc;
+      padding: 1rem 0;
+    }
+
+    .order:last-child {
+      border-bottom: none;
+    }
+
+    .order h3 {
+      color: #443627;
+      margin-bottom: 0.3rem;
+    }
+
+    .order p {
+      margin: 0.2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .status {
+      color: #D98324;
+      font-weight: bold;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <header>Your Orders</header>
+  <div class="orders-container" id="ordersContainer">
+    <p class="empty">Loading your orders...</p>
+  </div>
+
+  <script>
+    async function fetchOrders() {
+      try {
+        const res = await fetch("/api/orders");
+        const data = await res.json();
+        const container = document.getElementById("ordersContainer");
+
+        if (!data.orders || data.orders.length === 0) {
+          container.innerHTML = `<p class="empty">You have no orders yet.</p>`;
+          return;
+        }
+
+        container.innerHTML = "";
+        data.orders.forEach(order => {
+          const orderDiv = document.createElement("div");
+          orderDiv.className = "order";
+          orderDiv.innerHTML = `
+            <h3>Order #${order.Order_id}</h3>
+            <p><strong>Status:</strong> <span class="status">${order.Status}</span></p>
+            <p><strong>Dining Option:</strong> ${order.Dining_option}</p>
+            <p><strong>Items:</strong> ${order.list_of_orders}</p>
+            <p><strong>Total:</strong> ₱${order.Total_Price.toFixed(2)}</p>
+            <p><strong>Payment:</strong> ${order.Payment_method}</p>
+            <p><strong>Ordered At:</strong> ${new Date(order.Ordered_at).toLocaleString()}</p>
+          `;
+          container.appendChild(orderDiv);
+        });
+      } catch (err) {
+        console.error(err);
+        document.getElementById("ordersContainer").innerHTML =
+          `<p class="empty">Failed to load orders. Please try again.</p>`;
+      }
+    }
+
+    fetchOrders();
+  </script>
+</body>
+</html>

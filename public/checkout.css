@@ -1,0 +1,121 @@
+/* ===============================
+   🔹 WACO CHECKOUT STYLE
+   =============================== */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #faf4f5;
+  color: #252525;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.checkout-container {
+  background: #fff;
+  max-width: 600px;
+  width: 100%;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  color: #443627;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.order-summary {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  background: #faf4f5;
+  padding: 0.8rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.total {
+  font-weight: bold;
+  text-align: right;
+  font-size: 1.2rem;
+  color: #443627;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 500;
+  color: #252525;
+}
+
+input, select, textarea {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #D98324;
+  box-shadow: 0 0 0 2px rgba(217, 131, 36, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.checkout-btn {
+  background-color: #D98324;
+  color: #fff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #443627;
+}
+
+#gcash-ref-box {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .checkout-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .total {
+    text-align: left;
+  }
+}

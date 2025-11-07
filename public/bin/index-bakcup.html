@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waco | Waffles & Coffee</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- 🟤 HEADER -->
+  <header class="header">
+    <h1 class="logo">Waco</h1>
+    <nav class="nav">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="cartBtn" class="btn-secondary">🛒 Cart</button>
+      <button id="loginBtn" class="btn-primary">Login</button>
+      <button id="logoutBtn" class="btn-secondary hidden">Logout</button>
+    </nav>
+  </header>
+
+  <!-- ☕ HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Freshly Brewed Coffee & Crispy Waffles</h2>
+      <p>Start your day with the perfect blend of comfort and flavor at <strong>Waco</strong>.</p>
+      <a href="#menu" class="btn-primary">Explore Menu</a>
+    </div>
+  </section>
+
+  <!-- 🧇 MENU SECTION -->
+  <section id="menu" class="main-content">
+    <h2>Our Menu</h2>
+    <p class="section-desc">
+      Handcrafted waffles and freshly brewed coffee — made with love and local beans.
+    </p>
+
+    <!-- 🧭 STATIC CATEGORY MENU -->
+    <div id="category-buttons" class="category-buttons">
+      <button class="btn-secondary active" data-category="All">All</button>
+      <button class="btn-secondary" data-category="Waffles">Waffles</button>
+      <button class="btn-secondary" data-category="Milk Tea">Milk Tea</button>
+      <button class="btn-secondary" data-category="Iced Coffee">Iced Coffee</button>
+      <button class="btn-secondary" data-category="Fruit Soda">Fruit Soda</button>
+      <button class="btn-secondary" data-category="Fruit Yogurt">Fruit Yogurt</button>
+    </div>
+
+    <!-- 🔸 Product Grid -->
+    <div id="products" class="product-grid"></div>
+  </section>
+
+  <!-- 🧾 ABOUT US -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+      At <strong>Waco</strong>, we believe every bite and sip should bring warmth.
+      Founded in 2023, our cozy café serves artisanal waffles and specialty coffee
+      sourced from local farms. Whether you’re here to relax, work, or meet friends,
+      we make sure your experience is unforgettable.
+    </p>
+    <img src="assets/about-cafe.jpg" alt="About Waco" />
+  </section>
+
+  <!-- 📍 CONTACT US -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p><strong>Address:</strong> Ipil St., San Jose Rodriguez, Rizal</p>
+        <p><strong>Email:</strong> hello@waco.com</p>
+        <p><strong>Hours:</strong> Mon–Sun: 7AM – 9PM</p>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d811.1959921573008!2d121.13471793841876!3d14.72840569323528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1759780245875!5m2!1sen!2sph"
+        width="100%" height="400" style="border:0; border-radius:15px;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- 🧡 FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Waco | Waffles & Coffee. All rights reserved.</p>
+  </footer>
+
+  <!-- 🛒 CART PANEL -->
+  <div id="cart-container" class="cart">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart" class="close-btn" aria-label="Close Cart">✖</button>
+    </div>
+    <ul id="cart-items"></ul>
+    <p id="cart-total">Total: ₱0.00</p>
+    <div class="cart-actions">
+      <button id="clearCart" class="btn-secondary">Clear Cart</button>
+      <button id="checkoutBtn" class="btn-primary">Checkout</button>
+    </div>
+  </div>
+
+  <!-- 🔐 LOGIN/SIGNUP MODAL -->
+  <div id="authModal" class="modal">
+    <div class="modal-content">
+      <span class="close" aria-label="Close Modal">&times;</span>
+
+      <div class="auth-tabs">
+        <button id="loginTab" class="tab active">Login</button>
+        <button id="signupTab" class="tab">Sign Up</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+
+      <form id="signupForm" class="auth-form hidden">
+        <input type="text" id="signupName" placeholder="Full Name" required />
+        <input type="email" id="signupEmail" placeholder="Email" required />
+        <input type="password" id="signupPassword" placeholder="Password" required />
+        <button type="submit" class="btn-primary">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 🧃 PRODUCT CUSTOMIZATION MODAL -->
+  <div id="customModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeCustomModal">&times;</span>
+      <h3>Customize Your Drink</h3>
+      <form id="customForm">
+        <div class="form-group">
+          <label for="drinkSize">Select Size:</label>
+          <select id="drinkSize" required>
+            <option value="16oz">16oz</option>
+            <option value="22oz">22oz</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sugarLevel">Sugar Level:</label>
+          <select id="sugarLevel" required>
+            <option value="0%">0%</option>
+            <option value="25%">25%</option>
+            <option value="50%">50%</option>
+            <option value="75%">75%</option>
+            <option value="100%">100%</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary">Add to Cart</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
